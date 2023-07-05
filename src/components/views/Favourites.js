@@ -1,19 +1,19 @@
-import Students from "./Students";
+import { useState } from "react";
 import Favourite from "../UI/Favourite";
-export default function Favourites() {
+export default function Favourites(props) {
+  const [students, setStudents] = useState(props.students);
   return (
     <>
       <h1>Favourites components go here</h1>
       <h1 className="">Students in your fav list</h1>
       <div className="">
-        {Students.map((student) => {
+        {students.map((student) => {
           if (student.favourite === true) {
             return (
               <Favourite
-                name={student.name}
-                id={student.userid}
-                img={student.img}
-                removeFavourite={student.removeFavourite}
+                name={student.UserFirstname}
+                id={student.UserID}
+                img={student.UserImageURL}
               />
             );
           }
