@@ -1,22 +1,19 @@
-import Students from "./Students";
-import Favourite from "../UI/Favourite";
-export default function Favourites() {
+import FavouriteCard from "../UI/FavouriteCard";
+
+export default function Favourites(props) {
   return (
     <>
-      <h1>Favourites components go here</h1>
-      <h1 className="">Students in your fav list</h1>
-      <div className="">
-        {Students.map((student) => {
-          if (student.favourite === true) {
-            return (
-              <Favourite
-                name={student.name}
-                id={student.userid}
-                img={student.img}
-                removeFavourite={student.removeFavourite}
-              />
-            );
-          }
+      <h1 className="Card">Students in your fav list</h1>
+      <div className="theStudents">
+        {props.students.map((student) => {
+          return student.favourite ? (
+            <FavouriteCard
+              name={student.UserFirstname}
+              id={student.UserID}
+              img={student.UserImageURL}
+              removeFavourite={props.removeFavourite}
+            />
+          ) : null;
         })}
       </div>
     </>

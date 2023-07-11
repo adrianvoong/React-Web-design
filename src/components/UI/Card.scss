@@ -14,8 +14,12 @@ div.cardContainer {
     padding: 10px;
     border: 1px solid LightGray;
     border-radius: 5px;
-    box-shadow: 4px 4px 8px 4px rgba(70,70,70,0.3);
+    box-shadow: 4px 4px 8px 4px rgba(70, 70, 70, 0.3);
 
-    img { width: 100%; display: block; border-radius: 0px 0px 3px 3px }
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 0px 0px 3px 3px;
+    }
   }
 }

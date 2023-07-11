@@ -1,11 +1,12 @@
-
 footer {
   height: 50px;
   padding: 0 5px;
-  background: LimeGreen;
+  background: rgb(228, 101, 101);
   display: flex;
   align-items: center;
   justify-content: center;
 
-  p.thankyou { color: White; }
+  p.thankyou {
+    color: White;
+  }
 }

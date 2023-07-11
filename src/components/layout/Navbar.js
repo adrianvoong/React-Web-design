@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav>
       <div className="navItem">
-        <NavLink to="/module">Home</NavLink>
+        <NavLink to="/module">Modules</NavLink>
       </div>
 
       <div className="navItem">

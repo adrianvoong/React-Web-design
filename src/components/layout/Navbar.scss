@@ -1,16 +1,15 @@
 nav {
   padding: 5px;
-  background: LimeGreen;
+  background: rgb(28, 36, 28);
   display: flex;
   gap: 10px;
 
   div.navItem a {
     color: White;
     text-decoration: none;
-  
+
     &:hover {
       color: Black;
     }
   }
-
 }
