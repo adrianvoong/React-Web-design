@@ -1,6 +1,6 @@
 import { useState } from "react";
 import View from "../UI/View.js";
-import studentCard from "./StudentCard.js";
+import studentCards from "./StudentCard.js";
 
 export default function Students(props) {
   const [theStudents, setStudents] = useState(props.students);
@@ -14,10 +14,19 @@ export default function Students(props) {
             <studentCard>
               <p>{student.UserEmail.substring(0, 8)}</p>
               <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
-              src={student.UserImageURL}
-              alt={student.UserEmail.substring(0, 8)}
-              addToFavourites={props.addToFavourites}
+              <img
+                src={student.UserImageURL}
+                alt={student.UserEmail.substring(0, 8)}
+                addToFavourites={theStudents.addToFavourites}
+              />
             </studentCard>
+            <button
+              onClick={() => {
+                props.addToFavourites(props.UserID);
+              }}
+            >
+              <span>Add Favourite</span>
+            </button>
           </div>
         );
       })}
