@@ -1,9 +1,8 @@
 import { useState } from "react";
 import View from "../UI/View.js";
-import studentCards from "./StudentCard.js";
 
 export default function Students(props) {
-  const [theStudents, setStudents] = useState(props.students);
+  const [theStudents] = useState(props.students);
 
   return (
     <View>
@@ -22,7 +21,7 @@ export default function Students(props) {
             </studentCard>
             <button
               onClick={() => {
-                props.addToFavourites(props.UserID);
+                props.addToFavourites(student.UserID);
               }}
             >
               <span>Add Favourite</span>

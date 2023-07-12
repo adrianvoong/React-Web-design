@@ -9,7 +9,7 @@ export default function FavouriteCard(props) {
 
       <button
         onClick={() => {
-          props.removeFavourite(props.UserID);
+          props.removeFavourite(props.id);
         }}
       >
         <span>remove from DAAAAA Favourite</span>

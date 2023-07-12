@@ -42,10 +42,10 @@ function App() {
 
   function addToFavourites(UserID) {
     const updatedFavourites = students.map((student) => {
-      if (student === student.UserID && student.favourite !== true) {
+      if (UserID === student.UserID && student.favourite !== true) {
         alert("Student added to favourites");
         return { ...student, favourite: true };
-      } else if (student.favourite === true) {
+      } else if (UserID === student.UserID && student.favourite === true) {
         alert("You've already added this student to favourite");
       }
       return student;
