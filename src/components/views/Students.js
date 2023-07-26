@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import View from "../UI/View.js";
 import Searchbar from "./Searchbar.js";
-import { Card, CardContainer } from "../UI/Card.js";
+import { CardContainer } from "../UI/Card.js";
+import FavCard from "./FavCard.js";
+import StudentCard from "./StudentCard.js";
 
 export default function Students(props) {
   const [theStudents, setStudents] = useState(null);
@@ -11,7 +13,13 @@ export default function Students(props) {
   const get = async () => {
     const response = await fetch(url);
     const data = await response.json();
-    setStudents(data);
+    const newResult = data.map((user) => {
+      return {
+        ...user,
+        UserAffinityID: Math.random() > 0.9 ? 1 : Math.random() > 0.9 ? 2 : 0,
+      };
+    });
+    setStudents(newResult);
   };
 
   useEffect(() => {
@@ -32,23 +40,11 @@ export default function Students(props) {
             searchCoursemate={searchCoursemate}
           />
           <CardContainer>
-            {theStudents.map((student) => {
-              return (
-                <div class="studentcards">
-                  <Card>
-                    <studentCards>
-                      <p>{student.UserEmail.substring(0, 8)}</p>
-                      <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
-                      <img
-                        class="img"
-                        src={student.UserImageURL}
-                        alt={student.UserEmail.substring(0, 8)}
-                      />
-                    </studentCards>
-                  </Card>
-                </div>
-              );
-            })}
+            {theStudents.map((student) => (
+              <StudentCard key={student.UserID} student={student}>
+                <FavCard student={student} />
+              </StudentCard>
+            ))}
           </CardContainer>
         </View>
       )}

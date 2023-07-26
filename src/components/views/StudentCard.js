@@ -1,20 +1,19 @@
 import { Card } from "../UI/Card";
-export default function studentCards(props) {
+export default function StudentCard({ student, children }) {
   return (
-    <div class="cardContainer">
-      <Card>
-        <img className="" alt="Img of student" src={props.UserImageURL} />
-        <h1 className="">{props.UserFirstname}</h1>
-        <h1 className="">FavouriteCard</h1>
+    <Card>
+      <div class="studentcards">
+        <p>{student.UserEmail.substring(0, 8)}</p>
+        <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
 
-        <button
-          onClick={() => {
-            props.addtoFavourites(props.UserID);
-          }}
-        >
-          <span>Add to DAAAAA Favourite</span>
-        </button>
-      </Card>
-    </div>
+        <img
+          class="img"
+          src={student.UserImageURL}
+          alt={student.UserEmail.substring(0, 8)}
+        />
+        <p>{student.UserAffinityID}</p>
+      </div>
+      {children}
+    </Card>
   );
 }
