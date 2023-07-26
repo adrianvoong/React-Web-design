@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import View from "../UI/View.js";
-import Searchbar from "./Searchbar.js";
 import { Card, CardContainer } from "../UI/Card.js";
 
 export default function Students(props) {
   const [theStudents, setStudents] = useState(null);
-  const url = "http://softwarehub.uk/unibase/api/users/modules/1";
-  function searchCoursemate(search) {}
+  const url = "http://softwarehub.uk/unibase/api/users/groups/1";
 
   const get = async () => {
     const response = await fetch(url);
@@ -26,11 +24,7 @@ export default function Students(props) {
         <p>No records found.</p>
       ) : (
         <View>
-          <h1 className="title">Students In the course</h1>
-          <Searchbar
-            className="searchbar"
-            searchCoursemate={searchCoursemate}
-          />
+          <h1>Favourite Students in your course</h1>
           <CardContainer>
             {theStudents.map((student) => {
               return (

@@ -1,17 +1,16 @@
 .cardContainer {
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 6px;
   padding: 20px 2px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0px;
-  width: 60%;
-  height: 60%;
-  margin: 2rem;
+  .img {
+    width: 80%;
+    display: block;
+    border-radius: 3px 3px 3px 3px;
+    padding: 1px;
+  }
 
   .card {
-    width: 200px;
+    width: 240px;
     height: 250px;
     padding: 10px;
     border: 1px solid LightGray;
@@ -21,16 +20,17 @@
 
     margin: 1rem;
     box-shadow: 4px 4px 8px 4px rgba(70, 70, 70, 0.3);
-
-    .img {
-      width: 60%;
-      display: block;
-      border-radius: 0px 0px 3px 3px;
-    }
   }
 
   .searchbar {
     border: 1px solid rgb(255, 61, 61);
     border-radius: 6px;
+    display: flex;
+    justify-content: center;
   }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
 }

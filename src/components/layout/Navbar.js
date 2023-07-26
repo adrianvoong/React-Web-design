@@ -13,7 +13,7 @@ function Navbar() {
       </div>
 
       <div className="navItem">
-        <NavLink to="/favourite">favourite</NavLink>
+        <NavLink to="/FavStudents">favourite</NavLink>
       </div>
     </nav>
   );

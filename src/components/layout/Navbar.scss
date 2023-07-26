@@ -1,8 +1,9 @@
 nav {
   padding: 5px;
-  background: rgb(28, 36, 28);
+  background: rgb(130, 185, 236);
   display: flex;
   gap: 10px;
+  justify-content: center;
 
   div.navItem a {
     color: White;
@@ -10,6 +11,7 @@ nav {
 
     &:hover {
       color: Black;
+      text-align: center;
     }
   }
 }
