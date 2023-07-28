@@ -1,4 +1,4 @@
-export default function FavCard({ student, children }) {
+export default function FavCard({ student, children, index }) {
   // initialisation ----------------------------
   const loggedInUser = 277;
   const likeRecord = { LikerID: loggedInUser };
@@ -52,14 +52,14 @@ export default function FavCard({ student, children }) {
   );
 
   let buttons = null;
-  if (student.UserAffinityID === 1)
+  if (student.UserLikeAffinityID === 1)
     buttons = (
       <>
         {buttonDislike}
         {buttonReset}
       </>
     );
-  else if (student.UserAffinityID === 0)
+  else if (student.UserLikeAffinityID === 0)
     buttons = (
       <>
         {buttonLike}
@@ -77,6 +77,8 @@ export default function FavCard({ student, children }) {
   return (
     <div className="FavCard">
       {children}
+      <p>{index}</p>
+
       {buttons}
     </div>
   );

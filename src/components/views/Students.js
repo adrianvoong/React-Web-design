@@ -7,7 +7,7 @@ import StudentCard from "./StudentCard.js";
 
 export default function Students(props) {
   const [theStudents, setStudents] = useState(null);
-  const url = "http://softwarehub.uk/unibase/api/users/modules/1";
+  const url = `http://softwarehub.uk/unibase/api/users/likes/277`;
   function searchCoursemate(search) {}
 
   const get = async () => {
@@ -19,7 +19,7 @@ export default function Students(props) {
         UserAffinityID: Math.random() > 0.9 ? 1 : Math.random() > 0.9 ? 2 : 0,
       };
     });
-    setStudents(newResult);
+    setStudents(data);
   };
 
   useEffect(() => {
@@ -40,9 +40,9 @@ export default function Students(props) {
             searchCoursemate={searchCoursemate}
           />
           <CardContainer>
-            {theStudents.map((student) => (
+            {theStudents.map((student, index) => (
               <StudentCard key={student.UserID} student={student}>
-                <FavCard student={student} />
+                <FavCard student={student} index={index} />
               </StudentCard>
             ))}
           </CardContainer>
