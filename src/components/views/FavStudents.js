@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import View from "../UI/View.js";
 import { Card, CardContainer } from "../UI/Card.js";
+import CustomBorderCard from "./ColourIndicator.js";
 
 export default function Students(props) {
   const [theStudents, setStudents] = useState(null);
@@ -29,17 +30,22 @@ export default function Students(props) {
             {theStudents.map((student) => {
               return (
                 <div class="studentcards">
-                  <Card>
-                    <studentCards>
-                      <p>{student.UserEmail.substring(0, 8)}</p>
-                      <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
-                      <img
-                        class="img"
-                        src={student.UserImageURL}
-                        alt={student.UserEmail.substring(0, 8)}
-                      />
-                    </studentCards>
-                  </Card>
+                  <>
+                    <CustomBorderCard
+                      affinityID={student.UserLikeAffinityID}
+                      key={student.UserID}
+                    >
+                      <studentCards>
+                        <p>{student.UserEmail.substring(0, 8)}</p>
+                        <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
+                        <img
+                          class="img"
+                          src={student.UserImageURL}
+                          alt={student.UserEmail.substring(0, 8)}
+                        />
+                      </studentCards>
+                    </CustomBorderCard>
+                  </>
                 </div>
               );
             })}

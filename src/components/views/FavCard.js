@@ -75,7 +75,7 @@ export default function FavCard({ student, children, index }) {
     );
 
   return (
-    <div className="FavCard">
+    <div className="">
       {children}
       <p>{index}</p>
 

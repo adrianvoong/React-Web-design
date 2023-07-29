@@ -5,7 +5,6 @@
   .img {
     width: 80%;
     display: block;
-    border-radius: 3px 3px 3px 3px;
     padding: 1px;
   }
 
@@ -13,13 +12,30 @@
     width: 240px;
     height: 300px;
     padding: 10px;
-    border: 1px solid LightGray;
+    border: solid;
     border-radius: 5px;
     align-items: center;
     text-align: center;
 
     margin: 1rem;
     box-shadow: 4px 4px 8px 4px rgba(70, 70, 70, 0.3);
+  }
+
+  /* CSS classes to define background colors */
+
+  .red-border {
+    border-color: red;
+    border-width: 10px;
+  }
+
+  .green-border {
+    border-color: green;
+    border-width: 10px;
+  }
+
+  .grey-border {
+    border-color: rgb(255, 199, 199);
+    border-width: 10px;
   }
 
   .searchbar {

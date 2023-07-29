@@ -4,6 +4,7 @@ import Searchbar from "./Searchbar.js";
 import { CardContainer } from "../UI/Card.js";
 import FavCard from "./FavCard.js";
 import StudentCard from "./StudentCard.js";
+import CustomBorderCard from "./ColourIndicator.js";
 
 export default function Students(props) {
   const [theStudents, setStudents] = useState(null);
@@ -13,12 +14,6 @@ export default function Students(props) {
   const get = async () => {
     const response = await fetch(url);
     const data = await response.json();
-    const newResult = data.map((user) => {
-      return {
-        ...user,
-        UserAffinityID: Math.random() > 0.9 ? 1 : Math.random() > 0.9 ? 2 : 0,
-      };
-    });
     setStudents(data);
   };
 
@@ -39,11 +34,17 @@ export default function Students(props) {
             className="searchbar"
             searchCoursemate={searchCoursemate}
           />
+
           <CardContainer>
             {theStudents.map((student, index) => (
-              <StudentCard key={student.UserID} student={student}>
-                <FavCard student={student} index={index} />
-              </StudentCard>
+              <CustomBorderCard
+                affinityID={student.UserLikeAffinityID}
+                key={student.UserID}
+              >
+                <StudentCard key={student.UserID} student={student}>
+                  <FavCard student={student} index={index} />
+                </StudentCard>
+              </CustomBorderCard>
             ))}
           </CardContainer>
         </View>
