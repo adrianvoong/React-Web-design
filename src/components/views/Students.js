@@ -25,7 +25,7 @@ export default function Students(props) {
     <>
       {!theStudents ? (
         <p>Loading records ...</p>
-      ) : theStudents.length === 0 ? (
+      ) : theStudents.status !== 200 ? (
         <p>No records found.</p>
       ) : (
         <View>
