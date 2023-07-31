@@ -1,9 +1,6 @@
-import ColourIndicator from "./ColourIndicator.js";
-
-export default function StudentCard({ UserLikeAffinityID, student, children }) {
+export default function StudentCard({ student, children }) {
   return (
     <>
-      <ColourIndicator affinityID={UserLikeAffinityID} />
       <p>{student.UserEmail.substring(0, 8)}</p>
       <p>{`${student.UserFirstname} ${student.UserLastname}`}</p>
       <img

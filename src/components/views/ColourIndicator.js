@@ -1,7 +1,7 @@
 import React from "react";
 import "../UI/Card"; // Import the CSS file for Card styles
 
-const CustomBorderCard = ({ affinityID, children }) => {
+const ColourIndicator = ({ affinityID, children }) => {
   let borderColorClass;
 
   switch (affinityID) {
@@ -19,4 +19,4 @@ const CustomBorderCard = ({ affinityID, children }) => {
   return <div className={`card ${borderColorClass}`}>{children}</div>;
 };
 
-export default CustomBorderCard;
+export default ColourIndicator;

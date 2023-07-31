@@ -4,11 +4,11 @@ import Searchbar from "./Searchbar.js";
 import { CardContainer } from "../UI/Card.js";
 import FavCard from "./FavCard.js";
 import StudentCard from "./StudentCard.js";
-import CustomBorderCard from "./ColourIndicator.js";
+import ColourIndicator from "./ColourIndicator.js";
 
 export default function Students(props) {
   const [theStudents, setStudents] = useState(null);
-  const url = `http://softwarehub.uk/unibase/api/users/likes/277`;
+  const url = `http://softwarehub.uk/unibase/api/users/likes`;
   function searchCoursemate(search) {}
 
   const get = async () => {
@@ -37,14 +37,14 @@ export default function Students(props) {
 
           <CardContainer>
             {theStudents.map((student, index) => (
-              <CustomBorderCard
+              <ColourIndicator
                 affinityID={student.UserLikeAffinityID}
                 key={student.UserID}
               >
                 <StudentCard key={student.UserID} student={student}>
                   <FavCard student={student} index={index} />
                 </StudentCard>
-              </CustomBorderCard>
+              </ColourIndicator>
             ))}
           </CardContainer>
         </View>

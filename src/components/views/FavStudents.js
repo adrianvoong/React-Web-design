@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import View from "../UI/View.js";
-import { Card, CardContainer } from "../UI/Card.js";
+import { CardContainer } from "../UI/Card.js";
 import CustomBorderCard from "./ColourIndicator.js";
 
 export default function Students(props) {
