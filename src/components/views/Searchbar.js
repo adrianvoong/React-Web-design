@@ -1,7 +1,7 @@
 export default function Searchbar(props) {
-  function handleChange(searchingStudent) {
-    var value = searchingStudent.target.value;
-    props.searchCoursemate(value);
+  function handleChange(searching) {
+    var value = searching.target.value;
+    props.search(value);
   }
   return (
     <>
@@ -12,8 +12,8 @@ export default function Searchbar(props) {
             name="name"
             id="name"
             placeholder="search"
-            onChange={(searchingStudent) => {
-              handleChange(searchingStudent);
+            onChange={(searching) => {
+              handleChange(searching);
             }}
           />
         </div>

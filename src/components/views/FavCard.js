@@ -1,8 +1,8 @@
 export default function FavCard({ student, children, index }) {
   // initialisation ----------------------------
   const loggedInUser = 277;
-  const likeRecord = { LikerID: loggedInUser };
-  const likeEndpoint = "http://softwarehub.uk/unibase/api/likes";
+  const likeRecord = { LikeID: loggedInUser };
+  const likeEndpoint = `http://softwarehub.uk/unibase/api/likes`;
 
   const post = async (url, likeRecord) => {
     // Build request object
@@ -38,7 +38,7 @@ export default function FavCard({ student, children, index }) {
   const handleReset = () => {
     console.log(`you reset ${student.UserID}`);
     likeRecord.LikeeID = student.UserID;
-    likeRecord.LikeAffinityID = 0;
+    likeRecord.LikeAffinityID = null;
     post(likeEndpoint, likeRecord);
   };
 
@@ -66,13 +66,14 @@ export default function FavCard({ student, children, index }) {
         {buttonDislike}
       </>
     );
-  else
+  else if (student.UserLikeAffinityID === null)
     buttons = (
       <>
         {buttonLike}
         {buttonReset}
       </>
     );
+  else;
 
   return (
     <div className="">
