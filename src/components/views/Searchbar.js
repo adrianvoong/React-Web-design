@@ -11,7 +11,7 @@ export default function Searchbar(props) {
             type="text"
             name="name"
             id="name"
-            placeholder="Find Student"
+            placeholder="search"
             onChange={(searchingStudent) => {
               handleChange(searchingStudent);
             }}

@@ -8,8 +8,8 @@ import ColourIndicator from "./ColourIndicator.js";
 
 export default function Students(props) {
   const [theStudents, setStudents] = useState(null);
-  const url = `http://softwarehub.uk/unibase/api/users/likes`;
-  function searchCoursemate(search) {}
+  const url = `http://softwarehub.uk/unibase/api/users`;
+  function searchFunction(searchFunction) {}
 
   const get = async () => {
     const response = await fetch(url);
@@ -21,19 +21,18 @@ export default function Students(props) {
     get();
   }, []);
 
+  console.log("theStudents:", theStudents);
+
   return (
     <>
       {!theStudents ? (
         <p>Loading records ...</p>
-      ) : theStudents.status !== 200 ? (
+      ) : theStudents.length === 200 ? (
         <p>No records found.</p>
       ) : (
         <View>
           <h1 className="title">Students In the course</h1>
-          <Searchbar
-            className="searchbar"
-            searchCoursemate={searchCoursemate}
-          />
+          <Searchbar className="searchbar" searchFunction={searchFunction} />
 
           <CardContainer>
             {theStudents.map((student, index) => (
