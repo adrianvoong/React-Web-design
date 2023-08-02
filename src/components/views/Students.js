@@ -38,7 +38,7 @@ export default function Students(props) {
     <>
       {!theStudents ? (
         <p>Loading records ...</p>
-      ) : theStudents.length === 200 ? (
+      ) : theStudents.length === 0 ? (
         <p>No records found.</p>
       ) : (
         <View>
@@ -52,7 +52,7 @@ export default function Students(props) {
                 key={student.UserID}
               >
                 <StudentCard key={student.UserID} student={student}>
-                  <FavCard student={student} index={index} />
+                  <FavCard student={student} index={index} get={get} />
                 </StudentCard>
               </ColourIndicator>
             ))}
