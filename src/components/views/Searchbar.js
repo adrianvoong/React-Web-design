@@ -1,23 +1,25 @@
-export default function Searchbar(props) {
-  function handleChange(searching) {
-    var value = searching.target.value;
-    props.search(value);
-  }
+import React from "react";
+//import "./Searchbar.scss";
+
+const Searchbar = ({ searchbar }) => {
+  const handleChange = (event) => {
+    const value = event.target.value;
+    searchbar(value);
+  };
+
   return (
-    <>
+    <div className="Searchbar">
       <div>
-        <div>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="search"
-            onChange={(searching) => {
-              handleChange(searching);
-            }}
-          />
-        </div>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Search students..."
+          onChange={handleChange}
+        />
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default Searchbar;
