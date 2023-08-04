@@ -1,5 +1,4 @@
 import React from "react";
-//import "./Searchbar.scss";
 
 const Searchbar = ({ searchbar }) => {
   const handleChange = (event) => {

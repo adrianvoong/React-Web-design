@@ -6,7 +6,6 @@ import { Card, CardContainer } from "../UI/Card.js";
 export default function Assessments(props) {
   const [theAssessments, setAssessments] = useState(null);
   const url = `http://softwarehub.uk/unibase/api/assessments/leader/820`;
-  function searchFunction(search) {}
 
   const get = async () => {
     try {
@@ -34,7 +33,6 @@ export default function Assessments(props) {
       ) : (
         <View>
           <h1>Assessments In The Module</h1>
-          <Searchbar className="searchbar" searchFunction={searchFunction} />
 
           <CardContainer>
             {theAssessments.map((assessment) => (
