@@ -11,7 +11,8 @@ import FilterButtons from "./FilterButton.js";
 const Students = () => {
   const [theStudents, setStudents] = useState([]);
   const [filteredStudents, setFilteredStudents] = useState([]);
-  const url = `http://softwarehub.uk/unibase/api/users/likes/277`;
+  //const url = `http://softwarehub.uk/unibase/api/users/likes/277`;
+  const url = `http://10.130.41.146:5000/api/users/likes/277`;
 
   const searchbar = (search) => {
     if (search === "") {
